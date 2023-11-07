@@ -1,0 +1,44 @@
+{% extends 'base/main.html' %} 
+{% block content %}
+<div class="create_update_main">
+  <div>
+    <form action="" method="POST" style="width: 40vw;" >
+      {% csrf_token %}
+        {% for field in form %}
+        <div class="create_update_form">
+          <label>{{field.label}}:</label> 
+        {{field}}
+      </div>
+        {% endfor %}
+      <div style="margin-top: 1rem;">
+        <button class="btn completeBtn" type="submit" style="font-size: 1rem;">Submit</button>
+        <a class="btn notCompleteBtn"  href="{{request.META.HTTP_REFERER}}">Cancel</a>
+      </div>
+    </form>
+  </div>
+  <hr>
+  <div style="width: 60vw">
+    {% if request.path == '/create_task/' %}
+    <div style="margin-left: 1rem;">
+      <h1>
+        Create Task
+      </h1>
+      <h4>Title is requirement.</h4>
+      <h4>Description is optional.</h4>
+      <h4>Complete is depend on you. </h4>
+      <h5><span style="color: rgb(0, 255, 0);">Submit</span> when you done the fields.  <span style="color: rgb(230, 99, 76)">Cancel</span> back to home page</h5>
+    </div>
+    {% else %}
+    <div style="margin-left: 1rem;">
+      <h1>Update Task</h1>
+      <h4>Title can change.</h4>
+      <h4>Description can change.</h4>
+      <h4>Complete is depend on you. </h4>
+      <h5><span style="color: rgb(0, 255, 0);">Submit</span> when you done changing.  <span style="color: rgb(230, 99, 76)">Cancel</span> back to home page</h5>
+    </div>
+    
+{% endif %}
+  </div>
+</div>
+
+{% endblock content %}

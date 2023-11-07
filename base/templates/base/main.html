@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>TO-DO</title>
+  </head>
+  <body >
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li class="messages">{{message}}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <div style="margin: 2rem;">
+       {% block content %} {% endblock content %}
+    </div>
+  </body>
+  </body>
+</html>

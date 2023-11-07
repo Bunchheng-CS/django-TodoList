@@ -1,0 +1,52 @@
+{% extends 'base/main.html' %} {% block content %}
+<div>
+  {% if page == 'login' %}
+  <div class="form__group_all">
+    <form class="form__group1" action="" method="POST">
+      {% csrf_token %}
+      <div class="form__group2">
+        <div class="form__group3-1">
+          <h1 class="titlelog_reg">Login your Account</h1>
+          <div>
+            <label for="username">Username</label>
+            <input class="login_input" style="margin-bottom: 10px;" type="text"id="username"placeholder="Username"name="username"/>
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input class="login_input" style="margin-bottom: 10px;" type="password"id="password"  placeholder="Password" name="password"
+            />
+          </div>
+          <button type="submit" class="btn normalBtn">Login</button>
+        </div>
+      </div>
+    </form>
+    <div class="auth__action form__group1">
+      <p class="ptext ">Haven't accounted yet?</p>
+
+        <a  class="ReLoHover" style="font-size: 1.2rem;" href="{% url 'base:register_page' %}">Register</a>
+
+    </div>
+  </div>
+  {% else %}
+  <div class="form__group_all">
+    <form class="form__group1" action="" method="POST">
+      {% csrf_token %}
+      <div class="form__group4">
+        <h1 class="titlelog_reg">Register your Account</h1>
+        {% for field in form %}
+        <div class="form__group3-2">
+          <label >{{field.label}}</label>
+          <span style="margin-bottom: 10px">{{field}}</span>
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn normalBtn">Register</button>
+      </div>
+    </form>
+    <div class="form__group1">
+      <p class="ptext ">Already have accoun't?</p>
+        <a  class="ReLoHover" style="font-size: 1.2rem;" href="{% url 'base:login_page' %}">Login</a>
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock content %}

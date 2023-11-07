@@ -1,0 +1,161 @@
+html,body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+.btn {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+
+.normalBtn {
+    background-color: #088178;
+    margin-bottom: 5px;
+}
+/* in home.html*/
+.taskList {
+    display: grid;
+}
+
+.taskCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+
+.taskCardComplete {
+    box-shadow: rgb(131, 235, 179) 0px 20px 30px -10px;
+    background-color: white;
+}
+
+.taskCardNotComplete {
+    box-shadow: rgb(209, 126, 113) 0px 20px 30px -10px;
+    background-color: white;
+}
+.createTaskBtn{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.logoutBtn{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-color: rgb(243, 30, 30);
+}
+.loginBtn{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-color: rgb(106, 255, 255)
+}
+.completeBtn {
+    background-color: rgb(131, 235, 179);
+    margin-bottom: 5px;
+}
+.notCompleteBtn {
+    background-color: rgb(209, 126, 113);
+    margin-bottom: 5px;
+}
+.taskCardText {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 60vw;
+    height: fit-content;
+    padding-left: 1rem;
+}
+
+.taskComplete {
+    text-decoration: line-through double;
+}
+
+/*in create_update.html*/
+
+.create_update_main {
+    margin-top: 5rem;
+    display: flex;
+    padding: 2rem
+}
+
+label {
+    font-size: 1.5rem;
+}
+.create_update_form{
+    display: flex; align-items: center; margin-bottom: 1rem;
+}
+/*in register_and_login_form.html*/
+
+.form__group_all {
+    display: block;
+}
+
+.form__group1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__group2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+    height: fit-content;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 20rem;
+}
+.form__group3-1 {
+    display: grid;
+    align-items: center;
+    grid-auto-flow: row;
+    padding: 1rem;
+}
+.form__group3-2 {
+    display: grid;
+    align-items: center;
+    grid-auto-flow: row;
+
+}
+.form__group4 {
+    padding: 5px 45px 5px 45px;
+    align-items: center;
+    height: 25rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 23rem;
+}
+
+.form__group5 {
+    display: grid;
+    align-items: center;
+    grid-auto-flow: row;
+    height: fit-content;
+    width: 2rem;
+    padding: 1rem;
+}
+.login_input {
+    border: 1px solid black;
+    width: 17rem;
+    height: 2.3rem;
+    padding: 0 0.75rem 0 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.ptext{
+    font-size: 1.2rem;
+    color: rgb(97, 96, 96);
+    margin-right: 0.5rem;
+}
+.ReLoHover:hover{
+    text-shadow: 0 0 30px #088178;
+    color: rgb(156, 154, 154);
+}

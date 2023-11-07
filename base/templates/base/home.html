@@ -1,0 +1,55 @@
+{% extends 'base/main.html' %} {% block content %}
+<div>
+  {% if request.user.is_authenticated %}
+  <div style="display: flex; align-items: center; justify-content: space-between">
+    <div style="width: 50vw">
+      <button class="btn createTaskBtn">
+        <a href="{% url 'base:create_task' %}">Create Task</a>
+      </button>
+    </div>
+
+    <div style="display: flex; align-items: center; width: 20vw">
+      <h3 style="margin-right: 0.5rem">{{request.user.username}}</h3>
+      <button class="btn logoutBtn">
+        <a style="color: white;" href="{% url 'base:logout_page' %}">Logout</a>
+      </button>
+    </div>
+  </div>
+
+  {% else %}
+  <div>
+    <a class="btn loginBtn" href="{% url 'base:login_page' %}">Login</a>
+  </div>
+  {% endif %}
+
+  <div class="taskList">
+    {% for task in tasks %}
+    <div class="taskCard">
+      {% if task.complete %}
+      <div class="taskCardText taskCardComplete">
+          <a href="{% url 'base:update_task' task.id %}" style="width: 60%;" >
+            <h3 class="taskComplete">
+              {{task.title}}
+            </h3 >
+          </a>
+        <button class="btn completeBtn" > 
+          <a style="color: white;" href="{% url 'base:delete_task' task.id %}" >Remove</a>
+        </button>
+      </div>
+      {% else %}
+      <div class="taskCardText taskCardNotComplete">
+          <a href="{% url 'base:update_task' task.id %}" style="width: 60%;">
+            <h3 >
+              {{task.title}}
+            </h3>
+          </a>
+        <button class="btn notCompleteBtn">
+          <a style="color: white;" href="{% url 'base:delete_task' task.id %}">Remove</a>
+        </button>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

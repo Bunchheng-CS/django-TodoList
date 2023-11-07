@@ -1,0 +1,11 @@
+{% extends 'base/main.html' %} {% block content %}
+<div>
+  <form class="form" action="" method="POST">
+    {% csrf_token %}
+    <p class="ptext">Are you sure you want to delete <span style="color: rgb(255, 117, 117);">" {{obj}} "</span> because it didn't completed yet?</p>
+    <button class="btn completeBtn" type="submit">Submit</button>
+      <a  class="btn notCompleteBtn" href="{{request.META.HTTP_REFERER}}">Cancel</a>
+
+  </form>
+</div>
+{% endblock content %}
