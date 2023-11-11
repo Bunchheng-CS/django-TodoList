@@ -9,7 +9,7 @@
 ### Install Django from requirements.txt
 - pip install -r requirements.txt
 ### create model for Database
-- python manage.py makemigrateions 
+- python manage.py makemigrations 
 - and then python manage.py migrate
 ### Create user for login to admin page
 - python manage.py createsuperuser
